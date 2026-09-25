@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8po4p8x867c6"
-path="res://.godot/imported/Rato.morrendo.png-723f7da487b49bdef68ce46703825b24.ctex"
+uid="uid://bwba508c0pqgn"
+path="res://.godot/imported/morcego.voando.png-8eecce6e2b42fe0cd486707f61009ab6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Rato.morrendo.png"
-dest_files=["res://.godot/imported/Rato.morrendo.png-723f7da487b49bdef68ce46703825b24.ctex"]
+source_file="res://Assets/Sprites/Inimigos/morcego.voando.png"
+dest_files=["res://.godot/imported/morcego.voando.png-8eecce6e2b42fe0cd486707f61009ab6.ctex"]
 
 [params]
 

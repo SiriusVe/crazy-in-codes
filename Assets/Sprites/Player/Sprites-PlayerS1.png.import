@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b614c4ch3uf0u"
-path="res://.godot/imported/Caranguejo.morrendo.png-b5c5a236f585e5d51abcd62abb1d3e88.ctex"
+uid="uid://bcavo16a2ijwg"
+path="res://.godot/imported/Sprites-PlayerS1.png-3df18ef0c6681ec5a8691eba82fe4fe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Caranguejo.morrendo.png"
-dest_files=["res://.godot/imported/Caranguejo.morrendo.png-b5c5a236f585e5d51abcd62abb1d3e88.ctex"]
+source_file="res://Assets/Sprites/Player/Sprites-PlayerS1.png"
+dest_files=["res://.godot/imported/Sprites-PlayerS1.png-3df18ef0c6681ec5a8691eba82fe4fe1.ctex"]
 
 [params]
 

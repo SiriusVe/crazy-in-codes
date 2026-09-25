@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcavo16a2ijwg"
-path="res://.godot/imported/Sprites-PlayerS1.png-7af65dc8c2214b5421d3795a20867fd2.ctex"
+uid="uid://bhskmni1xjtrt"
+path="res://.godot/imported/rato.andando.png-88e95047ddfc516b256235feaa36a29d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites-PlayerS1.png"
-dest_files=["res://.godot/imported/Sprites-PlayerS1.png-7af65dc8c2214b5421d3795a20867fd2.ctex"]
+source_file="res://Assets/Sprites/Inimigos/rato.andando.png"
+dest_files=["res://.godot/imported/rato.andando.png-88e95047ddfc516b256235feaa36a29d.ctex"]
 
 [params]
 

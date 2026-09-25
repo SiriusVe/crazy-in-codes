@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0yd0qm56ss0"
-path="res://.godot/imported/Caranguejo.ataque.png-cf793af3b6ff5a0f07412112f7a9dfcb.ctex"
+uid="uid://ch3rb1h6uob6r"
+path="res://.godot/imported/caranguejo.andando.png-0e9055ada5e46c0f1e04ac111eb79148.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Caranguejo.ataque.png"
-dest_files=["res://.godot/imported/Caranguejo.ataque.png-cf793af3b6ff5a0f07412112f7a9dfcb.ctex"]
+source_file="res://Assets/Sprites/Inimigos/caranguejo.andando.png"
+dest_files=["res://.godot/imported/caranguejo.andando.png-0e9055ada5e46c0f1e04ac111eb79148.ctex"]
 
 [params]
 

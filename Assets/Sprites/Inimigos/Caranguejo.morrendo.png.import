@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1sqbpwum3tug"
-path="res://.godot/imported/rato.ataque.png-057f9e5f7c1f379ea4ff28c5bf2ff94a.ctex"
+uid="uid://b614c4ch3uf0u"
+path="res://.godot/imported/Caranguejo.morrendo.png-22e1ad7db5ad67587e4a4d078728f5ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rato.ataque.png"
-dest_files=["res://.godot/imported/rato.ataque.png-057f9e5f7c1f379ea4ff28c5bf2ff94a.ctex"]
+source_file="res://Assets/Sprites/Inimigos/Caranguejo.morrendo.png"
+dest_files=["res://.godot/imported/Caranguejo.morrendo.png-22e1ad7db5ad67587e4a4d078728f5ae.ctex"]
 
 [params]
 

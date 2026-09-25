@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwba508c0pqgn"
-path="res://.godot/imported/morcego.voando.png-ac527dcbc0f6b7aee88a8546f0b380dd.ctex"
+uid="uid://c1sqbpwum3tug"
+path="res://.godot/imported/rato.ataque.png-fe9bb409b6aabf5a85560b3e3e07a042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/morcego.voando.png"
-dest_files=["res://.godot/imported/morcego.voando.png-ac527dcbc0f6b7aee88a8546f0b380dd.ctex"]
+source_file="res://Assets/Sprites/Inimigos/rato.ataque.png"
+dest_files=["res://.godot/imported/rato.ataque.png-fe9bb409b6aabf5a85560b3e3e07a042.ctex"]
 
 [params]
 
