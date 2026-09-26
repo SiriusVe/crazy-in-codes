@@ -16,7 +16,7 @@ var mental = 100.00
 var questao_atual = 0
 var time = 20.0
 var timeR = 20.0
-var error = 10.0
+var error = 5.0
 var fim_questao = false
 
 var questoes = [
@@ -91,6 +91,7 @@ func proxima_questao():
 	print("Nova questão! Timer:", timeR)
 	
 func _ready():
+	questoes.shuffle()
 	mostrar_questao()
 	a.pressed.connect(func(): verificar_resposta(0))
 	b.pressed.connect(func(): verificar_resposta(1))
@@ -101,7 +102,7 @@ func _ready():
 func _process(delta):
 	timeR -= delta
 	timer_txt.text = str(ceil(timeR))
-	mental -= (100.0 / time) * delta
+	mental -= (35.0 / time) * delta
 	mental = max(mental, 0.0)
 	mental_bar.value = mental
 	

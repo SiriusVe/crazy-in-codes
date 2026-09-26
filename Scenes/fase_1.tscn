@@ -111,15 +111,16 @@ text = "Error"
 
 [node name="Timertxt" type="Label" parent="QuizUI/QuestionPanel" unique_id=681253588]
 layout_mode = 0
-offset_left = 19.0
-offset_top = -59.0
-offset_right = 59.0
-offset_bottom = -36.0
+offset_left = 264.0
+offset_top = 4.0
+offset_right = 304.0
+offset_bottom = 27.0
+text = "ex"
 
 [node name="MentalBar" type="ProgressBar" parent="QuizUI" unique_id=2008913581]
 layout_mode = 0
-offset_left = 165.0
-offset_top = 6.0
-offset_right = 212.0
-offset_bottom = 470.0
+offset_left = 355.0
+offset_top = -2.0
+offset_right = 667.0
+offset_bottom = 25.0
 value = 100.0
