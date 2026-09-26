@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c0b137lhsjyax" path="res://Assets/Sprites/Cenários/Cenario.tela.fase1.png" id="1_l3mkw"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_l3mkw"]
+font_size = 8
+
 [node name="Fase1" type="Control" unique_id=637635367]
 layout_mode = 3
 anchors_preset = 15
@@ -48,9 +51,9 @@ text = "Qual a saída?"
 [node name="CdPanel" type="Panel" parent="QuizUI/QuestionPanel" unique_id=1872470705]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 45.0
+offset_top = 33.0
 offset_right = 308.0
-offset_bottom = 121.0
+offset_bottom = 109.0
 
 [node name="CdTxt" type="Label" parent="QuizUI/QuestionPanel/CdPanel" unique_id=942305141]
 layout_mode = 0
@@ -58,8 +61,12 @@ offset_left = 2.0
 offset_top = 1.0
 offset_right = 307.0
 offset_bottom = 75.0
-text = "int x = 5;
-printf(\"%d\", x+5)"
+text = "#include<stdio.h>
+int main{
+int x = 5;
+printf(\"%d\", x+5);
+}"
+label_settings = SubResource("LabelSettings_l3mkw")
 
 [node name="Answers" type="GridContainer" parent="QuizUI/QuestionPanel" unique_id=2105824468]
 layout_mode = 0
@@ -73,16 +80,16 @@ columns = 2
 
 [node name="A" type="Button" parent="QuizUI/QuestionPanel/Answers" unique_id=220852488]
 layout_mode = 2
-text = "A"
+text = "5"
 
 [node name="B" type="Button" parent="QuizUI/QuestionPanel/Answers" unique_id=2005646345]
 layout_mode = 2
-text = "B"
+text = "0"
 
 [node name="C" type="Button" parent="QuizUI/QuestionPanel/Answers" unique_id=691734294]
 layout_mode = 2
-text = "C"
+text = "10"
 
 [node name="D" type="Button" parent="QuizUI/QuestionPanel/Answers" unique_id=1539932499]
 layout_mode = 2
-text = "D"
+text = "Error"
