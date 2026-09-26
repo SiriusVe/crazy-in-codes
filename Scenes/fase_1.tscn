@@ -108,3 +108,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 18
 text = "Error"
+
+[node name="Timertxt" type="Label" parent="QuizUI/QuestionPanel" unique_id=681253588]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -59.0
+offset_right = 59.0
+offset_bottom = -36.0
+
+[node name="MentalBar" type="ProgressBar" parent="QuizUI" unique_id=2008913581]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 6.0
+offset_right = 212.0
+offset_bottom = 470.0
+value = 100.0
