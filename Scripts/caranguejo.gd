@@ -21,9 +21,12 @@ func _physics_process(delta: float) -> void:
 			direction *= -1
 			animated_sprite_2d.flip_h = direction < 0
 		
-func _on_hitbox_body_entered(body):
-	print("Detectou: ", body.name)
-	if body.is_in_group("player"):
-		print("Player")
-		live = false
-		animated_sprite_2d.play("Morrendo")
+
+# teste colisão e animação
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#print("Detectou: ", body.name)
+#
+	#if body.is_in_group("inimigos"):
+		#print("Inimigo!")
+		#live = false
+		#animated_sprite_2d.play("Morrendo")
