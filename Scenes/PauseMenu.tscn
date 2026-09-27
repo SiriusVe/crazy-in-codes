@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ds745cvbq5e0e"]
+
+[ext_resource type="Script" uid="uid://bwqd32kotknkn" path="res://Scripts/pause_manager.gd" id="1_lj4oq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7fw7d"]
+font_size = 120
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=332429809]
+process_mode = 3
+script = ExtResource("1_lj4oq")
+
+[node name="PauseButton" type="Button" parent="." unique_id=847556526]
+offset_left = 1181.0
+offset_right = 1281.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 60
+text = "▶"
+
+[node name="Panel" type="Panel" parent="." unique_id=140443629]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=338309329]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 2.0
+offset_right = 1091.0
+offset_bottom = 176.0
+text = "Crazy In Codes"
+label_settings = SubResource("LabelSettings_7fw7d")
+
+[node name="Continue" type="Button" parent="Panel" unique_id=1538282138]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 277.0
+offset_right = 886.0
+offset_bottom = 349.0
+text = "CONTINUE"
+
+[node name="Restart" type="Button" parent="Panel" unique_id=2119663823]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 415.0
+offset_right = 886.0
+offset_bottom = 487.0
+text = "RESTART"
+
+[node name="Back To Menu" type="Button" parent="Panel" unique_id=4702258]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 566.0
+offset_right = 886.0
+offset_bottom = 638.0
+text = "MENU"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/Back To Menu" to="." method="_on_back_to_menu_pressed"]
