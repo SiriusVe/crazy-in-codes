@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cv4epms6j11co"]
+
+[ext_resource type="PackedScene" uid="uid://brxw61a388b6" path="res://Scenes/caranguejo.tscn" id="1_ilv3s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7fw7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fw7d"]
+size = Vector2(12, 119)
+
+[node name="Testes" type="Node2D" unique_id=901667535]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1617190979]
+zoom = Vector2(4, 4)
+
+[node name="Caranguejo" parent="." unique_id=557927447 instance=ExtResource("1_ilv3s")]
+position = Vector2(-28, -19)
+
+[node name="Chao" type="StaticBody2D" parent="." unique_id=885480810]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao" unique_id=116970847]
+shape = SubResource("WorldBoundaryShape2D_7fw7d")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=647787969]
+position = Vector2(109, -74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=707821669]
+position = Vector2(-16, 16.5)
+shape = SubResource("RectangleShape2D_7fw7d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1897424162 groups=["player"]]
+position = Vector2(-96, -74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=763034610 groups=["player"]]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-16, 16.5)
+shape = SubResource("RectangleShape2D_7fw7d")
