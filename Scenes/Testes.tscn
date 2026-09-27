@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://brxw61a388b6" path="res://Scenes/caranguejo.tscn" id="1_ilv3s"]
 [ext_resource type="PackedScene" uid="uid://d2bpfcy8n3kfo" path="res://Scenes/morcego.tscn" id="2_rpupv"]
+[ext_resource type="PackedScene" uid="uid://dds5deibvq4vn" path="res://Scenes/rato.tscn" id="3_cgdnf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7fw7d"]
 
@@ -19,7 +20,7 @@ zoom = Vector2(4, 4)
 visible = false
 
 [node name="Caranguejo" parent="CaranguejoMov" unique_id=557927447 instance=ExtResource("1_ilv3s")]
-position = Vector2(-28, -19)
+position = Vector2(-3, -103)
 
 [node name="Chao" type="StaticBody2D" parent="CaranguejoMov" unique_id=885480810]
 
@@ -49,8 +50,15 @@ position = Vector2(-62, -14)
 shape = SubResource("RectangleShape2D_ilv3s")
 
 [node name="MorcegoMov" type="Node2D" parent="." unique_id=1737896697]
+visible = false
 
 [node name="Morcego" parent="MorcegoMov" unique_id=1235634314 instance=ExtResource("2_rpupv")]
 position = Vector2(1, 49)
+
+[node name="RatoMov" type="Node2D" parent="." unique_id=2086424800]
+visible = false
+
+[node name="Rato" parent="RatoMov" unique_id=1487017814 instance=ExtResource("3_cgdnf")]
+position = Vector2(-14, -23)
 
 [connection signal="body_entered" from="CaranguejoMov/Area2D" to="CaranguejoMov/Caranguejo" method="_on_area_2d_body_entered"]
