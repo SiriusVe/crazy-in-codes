@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv4epms6j11co"]
 
 [ext_resource type="PackedScene" uid="uid://brxw61a388b6" path="res://Scenes/caranguejo.tscn" id="1_ilv3s"]
+[ext_resource type="PackedScene" uid="uid://d2bpfcy8n3kfo" path="res://Scenes/morcego.tscn" id="2_rpupv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7fw7d"]
 
@@ -11,11 +12,11 @@ size = Vector2(12, 119)
 
 [node name="Testes" type="Node2D" unique_id=901667535]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1617190979]
+zoom = Vector2(4, 4)
+
 [node name="CaranguejoMov" type="Node2D" parent="." unique_id=838894137]
 visible = false
-
-[node name="Camera2D" type="Camera2D" parent="CaranguejoMov" unique_id=1617190979]
-zoom = Vector2(4, 4)
 
 [node name="Caranguejo" parent="CaranguejoMov" unique_id=557927447 instance=ExtResource("1_ilv3s")]
 position = Vector2(-28, -19)
@@ -46,5 +47,10 @@ shape = SubResource("RectangleShape2D_7fw7d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaranguejoMov/Area2D" unique_id=1076610853 groups=["player"]]
 position = Vector2(-62, -14)
 shape = SubResource("RectangleShape2D_ilv3s")
+
+[node name="MorcegoMov" type="Node2D" parent="." unique_id=1737896697]
+
+[node name="Morcego" parent="MorcegoMov" unique_id=1235634314 instance=ExtResource("2_rpupv")]
+position = Vector2(1, 49)
 
 [connection signal="body_entered" from="CaranguejoMov/Area2D" to="CaranguejoMov/Caranguejo" method="_on_area_2d_body_entered"]

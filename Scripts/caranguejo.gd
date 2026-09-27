@@ -7,8 +7,7 @@ const SPEED = 70.0
 var direction = 1
 var live:bool = true
 
-func _ready():
-	 
+func _ready(): 
 	animated_sprite_2d.play("Andando")
 
 func _physics_process(delta: float) -> void:
