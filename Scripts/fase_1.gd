@@ -455,12 +455,15 @@ func _process(delta):
 			player_face.play("Happy")
 		elif mental >= 40:
 			mentalLoss = 35
+			error = 6
 			player_face.play("Serious")
 		elif mental >= 25:
 			mentalLoss = 60
+			error = 8
 			player_face.play("Sad")
 		else:
 			mentalLoss = 100
+			error = 10
 		timeR -= delta
 		timeR = max(timeR, 0)
 		timer_txt.text = str(ceil(timeR))

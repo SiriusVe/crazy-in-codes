@@ -1,18 +1,104 @@
 [gd_scene format=3 uid="uid://ds745cvbq5e0e"]
 
 [ext_resource type="Script" uid="uid://bwqd32kotknkn" path="res://Scripts/pause_manager.gd" id="1_lj4oq"]
+[ext_resource type="Texture2D" uid="uid://bsii4e08y7u6i" path="res://Assets/Sprites/Botões/botao-continuar.png" id="2_ey1tb"]
+[ext_resource type="Texture2D" uid="uid://br1v0mg6axtkb" path="res://Assets/Sprites/Botões/botao-menu.png" id="3_siy43"]
+[ext_resource type="Texture2D" uid="uid://ucslsvgscvtq" path="res://Assets/Sprites/Botões/botao-restart.png" id="4_yxrls"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7fw7d"]
 font_size = 120
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqxqw"]
+atlas = ExtResource("2_ey1tb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lptsj"]
+atlas = ExtResource("2_ey1tb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fw7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqxqw")
+}],
+"loop": 1,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lptsj")
+}],
+"loop": 1,
+"name": &"MouseOn",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_425uk"]
+atlas = ExtResource("3_siy43")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mys0b"]
+atlas = ExtResource("3_siy43")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exckr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_425uk")
+}],
+"loop": 1,
+"name": &"MouseOn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mys0b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7c70"]
+atlas = ExtResource("4_yxrls")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmvjn"]
+atlas = ExtResource("4_yxrls")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b3kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7c70")
+}],
+"loop": 1,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmvjn")
+}],
+"loop": 1,
+"name": &"MouseOn",
+"speed": 5.0
+}]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=332429809]
 process_mode = 3
 script = ExtResource("1_lj4oq")
 
 [node name="PauseButton" type="Button" parent="." unique_id=847556526]
-offset_left = 1181.0
-offset_right = 1281.0
-offset_bottom = 100.0
+offset_left = 1234.0
+offset_top = 1.0
+offset_right = 1327.0
+offset_bottom = 95.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 60
 text = "▶"
 
@@ -33,31 +119,54 @@ offset_bottom = 176.0
 text = "Crazy In Codes"
 label_settings = SubResource("LabelSettings_7fw7d")
 
-[node name="Continue" type="Button" parent="Panel" unique_id=1538282138]
-layout_mode = 0
-offset_left = 393.0
-offset_top = 277.0
-offset_right = 886.0
-offset_bottom = 349.0
-text = "CONTINUE"
+[node name="ContinueVisual" type="AnimatedSprite2D" parent="Panel" unique_id=965354783]
+position = Vector2(636, 337.00003)
+scale = Vector2(13, 13)
+sprite_frames = SubResource("SpriteFrames_7fw7d")
+animation = &"Default"
 
-[node name="Restart" type="Button" parent="Panel" unique_id=2119663823]
-layout_mode = 0
-offset_left = 393.0
-offset_top = 415.0
-offset_right = 886.0
-offset_bottom = 487.0
-text = "RESTART"
+[node name="Continue" type="Button" parent="Panel/ContinueVisual" unique_id=1538282138]
+z_index = -1
+offset_left = -17.923077
+offset_top = -6.6923103
+offset_right = 17.923077
+offset_bottom = 2.0769253
 
-[node name="Back To Menu" type="Button" parent="Panel" unique_id=4702258]
-layout_mode = 0
-offset_left = 393.0
-offset_top = 566.0
-offset_right = 886.0
-offset_bottom = 638.0
-text = "MENU"
+[node name="MenuVisual" type="AnimatedSprite2D" parent="Panel" unique_id=365393970]
+position = Vector2(626, 651.00006)
+scale = Vector2(13, 13)
+sprite_frames = SubResource("SpriteFrames_exckr")
+
+[node name="Back To Menu" type="Button" parent="Panel/MenuVisual" unique_id=4702258]
+z_index = -1
+offset_left = -16.538462
+offset_top = -6.9230824
+offset_right = 17.153845
+offset_bottom = 3.8461475
+
+[node name="Restart Visual" type="AnimatedSprite2D" parent="Panel" unique_id=1882947023]
+position = Vector2(635, 486)
+scale = Vector2(13, 13)
+sprite_frames = SubResource("SpriteFrames_4b3kd")
+animation = &"Default"
+
+[node name="Restart" type="Button" parent="Panel/Restart Visual" unique_id=2119663823]
+z_index = -1
+offset_left = -17.923084
+offset_top = -7.0
+offset_right = 98.74364
+offset_bottom = 27.615387
+scale = Vector2(0.3, 0.3)
+text = "
+"
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Panel/Back To Menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="mouse_entered" from="Panel/ContinueVisual/Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/ContinueVisual/Continue" to="." method="_on_continue_mouse_exited"]
+[connection signal="pressed" from="Panel/ContinueVisual/Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="Panel/MenuVisual/Back To Menu" to="." method="_on_back_to_menu_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MenuVisual/Back To Menu" to="." method="_on_back_to_menu_mouse_exited"]
+[connection signal="pressed" from="Panel/MenuVisual/Back To Menu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="mouse_entered" from="Panel/Restart Visual/Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Restart Visual/Restart" to="." method="_on_restart_mouse_exited"]
+[connection signal="pressed" from="Panel/Restart Visual/Restart" to="." method="_on_restart_pressed"]
