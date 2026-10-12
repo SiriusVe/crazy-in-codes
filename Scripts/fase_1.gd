@@ -17,11 +17,14 @@ extends Control
 @onready var mesa_pc: TextureRect = $MesaPC
 @onready var tela_cheia: TextureRect = $TelaCheia
 
+@onready var player_face: AnimatedSprite2D = $QuizUI/PlayerFace
+
+
 var mental = 100.00
 var questao_atual = 0
 var time = 20.0
 var timeR = 20.0
-var error = 5.0
+var error = 4.0
 var fim_questao = false
 var fimzoom = false
 
@@ -436,7 +439,7 @@ func _ready():
 	camera_control()
 	questoes.shuffle()
 	
-	await get_tree().create_timer(8).timeout
+	await get_tree().create_timer(7).timeout
 	mostrar_questao()
 	a.pressed.connect(func(): verificar_resposta(0))
 	b.pressed.connect(func(): verificar_resposta(1))
@@ -445,11 +448,23 @@ func _ready():
 
 
 func _process(delta):
+	var mentalLoss
 	if fimzoom:
+		if mental >= 70:
+			mentalLoss = 20
+			player_face.play("Happy")
+		elif mental >= 40:
+			mentalLoss = 35
+			player_face.play("Serious")
+		elif mental >= 25:
+			mentalLoss = 60
+			player_face.play("Sad")
+		else:
+			mentalLoss = 100
 		timeR -= delta
 		timeR = max(timeR, 0)
 		timer_txt.text = str(ceil(timeR))
-		mental -= (35.0 / time) * delta
+		mental -= (mentalLoss / time) * delta
 		mental = max(mental, 0.0)
 		mental_bar.value = mental
 		

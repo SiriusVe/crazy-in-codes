@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cb6ir56ygmecc" path="res://Scripts/fase_1.gd" id="1_acukj"]
 [ext_resource type="Texture2D" uid="uid://7lko7y5hwnvd" path="res://Assets/Sprites/Cenários/cenario.mesa.png" id="2_acukj"]
 [ext_resource type="Texture2D" uid="uid://dq7is1cfvlgri" path="res://Assets/Sprites/Cenários/cenario.telagrande.png" id="3_cq7l2"]
+[ext_resource type="Texture2D" uid="uid://bcavo16a2ijwg" path="res://Assets/Sprites/Player/Sprites-PlayerS1.png" id="4_efuq8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cq7l2"]
 font_size = 30
@@ -12,6 +13,45 @@ font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_efuq8"]
 font_size = 60
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw3gf"]
+atlas = ExtResource("4_efuq8")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hya8f"]
+atlas = ExtResource("4_efuq8")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw74n"]
+atlas = ExtResource("4_efuq8")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fw7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw3gf")
+}],
+"loop": 1,
+"name": &"Happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hya8f")
+}],
+"loop": 1,
+"name": &"Sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw74n")
+}],
+"loop": 1,
+"name": &"Serious",
+"speed": 5.0
+}]
 
 [node name="Fase1" type="Control" unique_id=637635367]
 layout_mode = 3
@@ -153,3 +193,9 @@ offset_top = -59.0
 offset_right = 1374.0
 offset_bottom = -14.0
 value = 100.0
+
+[node name="PlayerFace" type="AnimatedSprite2D" parent="QuizUI" unique_id=488415693]
+position = Vector2(269, 522)
+scale = Vector2(0.6533333, 0.68666667)
+sprite_frames = SubResource("SpriteFrames_7fw7d")
+animation = &"Happy"
