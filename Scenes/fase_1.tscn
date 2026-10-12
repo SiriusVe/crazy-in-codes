@@ -78,6 +78,24 @@ grow_vertical = 2
 texture = ExtResource("2_acukj")
 expand_mode = 5
 
+[node name="FundoAzul" type="ColorRect" parent="MesaPC" unique_id=722195255]
+z_index = -1
+layout_mode = 0
+offset_left = -1182.0
+offset_top = -836.0
+offset_right = 2469.0
+offset_bottom = 1842.0
+color = Color(0.4392157, 0.6039216, 0.81960785, 1)
+
+[node name="Fundomesa" type="ColorRect" parent="MesaPC" unique_id=1765709111]
+z_index = -1
+layout_mode = 0
+offset_left = -1213.0
+offset_top = 948.0
+offset_right = 2472.0
+offset_bottom = 1856.0
+color = Color(0.6117647, 0.3529412, 0.23529412, 1)
+
 [node name="TelaCheia" type="TextureRect" parent="." unique_id=327839839]
 visible = false
 layout_mode = 0
