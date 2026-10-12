@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Crazy in Codes"
-run/main_scene="uid://67gykr4ffylt"
+run/main_scene="uid://cm28868qsffi0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
