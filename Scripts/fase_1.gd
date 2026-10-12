@@ -27,7 +27,6 @@ var fimzoom = false
 
 var questoes = [
 	{
-		"linguagem": "C",
 		"pergunta": "Qual será a saída deste código?",
 		"codigo": "int x = 10;\nprintf(\"%d\", x + 5);",
 		"alternativas": [
@@ -37,36 +36,355 @@ var questoes = [
 			"20"
 		],
 		"correta": 2
-	},
-	
-	{
-		"linguagem": "Python",
-		"pergunta": "Qual será a saída deste código?",
-		"codigo": "x = 10\nprint(x + 5)",
+		},
+		{
+		"pergunta": "Qual expressão completa o código para somar a e b?",
+		"codigo": "int a = 5, b = 3;\nprintf(\"%d\", _____);",
 		"alternativas": [
-			"5",
-			"10",
-			"15",
-			"20"
+				"a * b",
+				"a - b",
+				"a + b",
+			    "a / b"
 		],
 		"correta": 2
-	}
+		},
+		{
+		"pergunta": "Qual função deve ser usada para imprimir uma mensagem na tela?",
+		"codigo": "_____(\"Olá, mundo!\");",
+		"alternativas": [
+				"print",
+				"printf",
+				"scanf",
+			    "display"
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual expressão completa o código para multiplicar x por y?",
+		"codigo": "int x = 4, y = 2;\nprintf(\"%d\", _____);",
+		"alternativas": [
+				"x / y",
+				"x * y",
+				"x + y",
+			    "x - y"
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual função permite ler um número digitado pelo usuário?",
+		"codigo": "int idade;\n_____(\"%d\", &idade);",
+		"alternativas": [
+				"input",
+				"printf",
+				"scanf",
+			    "read"
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador verifica se x é maior que 5?",
+		"codigo": "int x = 10;\nif (x _____ 5)\n    printf(\"Maior\");",
+		"alternativas": [
+				"=",
+				"!=",
+				"<",
+			    ">"
+		],
+		"correta": 3
+		},
+		{
+		"pergunta": "Qual operador verifica se o resto da divisão de n por 2 é igual a zero?",
+		"codigo": "int n = 8;\nif (n % 2 _____ 0)\n    printf(\"Par\");",
+		"alternativas": [
+				">",
+				"==",
+				"!=",
+			    "="
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual expressão calcula a subtração de b de a?",
+		"codigo": "int a = 10, b = 4;\nint resultado = _____;",
+		"alternativas": [
+				"a / b",
+				"a - b",
+				"a + b",
+			    "a * b"
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual instrução incrementa i em uma unidade a cada repetição?",
+		"codigo": "for (int i = 0; i < 5; _____)\n    printf(\"%d \", i);",
+		"alternativas": [
+				"i = 5",
+				"i--",
+				"i++",
+		    "i += 5"
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador calcula o resto da divisão entre dois números?",
+		"codigo": "int resultado = 10 _____ 3;\nprintf(\"%d\", resultado);",
+		"alternativas": [
+				"*",
+				"%",
+				"/",
+			    "+"
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual operador verifica se senha é igual a 123?",
+		"codigo": "int senha = 123;\nif (senha _____ 123)\n    printf(\"Correto\");",
+		"alternativas": [
+				"==",
+				"=",
+		 	   "!=",
+			    ">"
+		],
+		"correta": 0
+		},
+#medias
+		{
+		"pergunta": "Qual expressão calcula a média aritmética de a e b?",
+		"codigo": "float a = 7, b = 9;\nprintf(\"%.1f\", _____);",
+		"alternativas": [
+			"a + b",
+			"(a + b) / 2",
+			"a * b / 2",
+			"a - b / 2"
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual operador verifica se um número é positivo?",
+		"codigo": "int n = -4;\nif (n _____ 0) printf(\"Positivo\");",
+		"alternativas": [
+			"<",
+			"==",
+			">",
+			"!="
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador permite verificar corretamente se n é par?",
+		"codigo": "int n = 7;\nif (n % 2 _____ 0) printf(\"Par\");\nelse printf(\"Impar\");",
+		"alternativas": [
+			"!=",
+			"==",
+			">",
+			"="
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual expressão retorna o maior entre a e b?",
+		"codigo": "int a = 12, b = 8;\nprintf(\"%d\", _____);",
+		"alternativas": [
+			"a < b ? a : b",
+			"a > b ? a : b",
+			"a + b",
+			"a - b"
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual instrução permite contar de 1 até 5, avançando uma unidade por vez?",
+		"codigo": "for (int i = 1; i <= 5; _____)\n    printf(\"%d \", i);",
+		"alternativas": [
+			"i--",
+			"i += 2",
+			"i++",
+			"i = 0"
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador acumula os valores de i na variável soma?",
+		"codigo": "int soma = 0;\nfor (int i = 1; i <= 5; i++) soma _____ i;\nprintf(\"%d\", soma);",
+		"alternativas": [
+			"-=",
+			"+=",
+			"*=",
+			"/="
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual expressão calcula o quadrado de n?",
+		"codigo": "int n = 6;\nint quadrado = _____;\nprintf(\"%d\", quadrado);",
+		"alternativas": [
+			"n + n",
+			"n / 2",
+			"n * n",
+			"n - 2"
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador torna a condição verdadeira para uma idade de 20 anos?",
+		"codigo": "int idade = 20;\nif (idade _____ 18) printf(\"Maior\");\nelse printf(\"Menor\");",
+		"alternativas": [
+			"<",
+			"<=",
+			">",
+			"=="
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador permite que a variável menor receba o menor valor entre a e b?",
+		"codigo": "int a = 15, b = 10;\nint menor = a _____ b ? a : b;\nprintf(\"%d\", menor);",
+		"alternativas": [
+			">",
+			"<",
+			"==",
+			"!="
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual expressão calcula corretamente a média de três notas?",
+		"codigo": "float a = 7, b = 8, c = 9;\nprintf(\"%.1f\", _____);",
+		"alternativas": [
+			"(a + b + c) / 3",
+			"a + b + c / 3",
+			"(a * b * c) / 3",
+			"a + b - c / 3"
+		],
+		"correta": 0
+		},
+#difíceis
+		  {
+		"pergunta": "Qual expressão acessa o valor armazenado na variável apontada por p?",
+		"codigo": "int x = 10, *p = &x;\nprintf(\"%d\", _____);",
+		"alternativas": [
+			"p",
+			"&p",
+			"*p",
+			"x + 1"
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual chamada recursiva completa o cálculo do fatorial de n?",
+		"codigo": "int f(int n) {\n    if (n <= 1) return 1;\n    return n * _____;\n}",
+		"alternativas": [
+			"f(n - 1)",
+			"f(n + 1)",
+			"n - 1",
+			"f(1)"
+		],
+		"correta": 0
+		},
+		{
+		"pergunta": "Qual expressão acessa o segundo elemento do vetor v usando aritmética de ponteiros?",
+		"codigo": "int v[] = {10, 20, 30};\nprintf(\"%d\", _____);",
+		"alternativas": [
+			"*(v + 1)",
+			"*v + 2",
+			"*(v - 1)",
+			"v + 1"
+		],
+		"correta": 0
+		},
+		{
+		"pergunta": "Qual instrução completa a troca dos valores de a e b?",
+		"codigo": "int a = 8, b = 3, t;\nif (a > b) { t = a; a = b; _____; }",
+		"alternativas": [
+			"b = t",
+			"t = b",
+			"a = t",
+			"b = a"
+		],
+		"correta": 0
+		},
+		{
+		"pergunta": "Qual operador lógico exige que as duas condições sejam verdadeiras?",
+		"codigo": "int x = 7;\nif (x > 5 _____ x < 10) printf(\"OK\");",
+		"alternativas": [
+			"||",
+			"&&",
+			"!=",
+			"=="
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual chamada recursiva calcula a soma dos números de 1 até n?",
+		"codigo": "int soma(int n) {\n    if (n == 0) return 0;\n    return n + _____;\n}",
+		"alternativas": [
+			"soma(n - 1)",
+			"soma(n + 1)",
+			"n - 1",
+			"soma(0)"
+		],
+		"correta": 0
+		},
+		{
+		"pergunta": "Qual função retorna a quantidade de caracteres de uma string, sem contar o caractere nulo final?",
+		"codigo": "#include <string.h>\nchar texto[] = \"GODOT\";\nprintf(\"%zu\", _____);",
+		"alternativas": [
+			"sizeof(texto)",
+			"strlen(texto)",
+			"strcpy(texto, \"C\")",
+			"sizeof(texto[0])"
+		],
+	"correta": 1
+},
+		{
+		"pergunta": "Qual expressão permite alterar para 20 o valor apontado por p?",
+		"codigo": "int x = 5, *p = &x;\n_____ = 20;\nprintf(\"%d\", x);",
+		"alternativas": [
+			"p",
+			"&p",
+			"*p",
+			"x*"
+		],
+		"correta": 2
+		},
+		{
+		"pergunta": "Qual operador faz a expressão retornar o menor entre a e b?",
+		"codigo": "int a = 4, b = 9;\nprintf(\"%d\", a _____ b ? a : b);",
+		"alternativas": [
+			">",
+			"<",
+			"==",
+			"!="
+		],
+		"correta": 1
+		},
+		{
+		"pergunta": "Qual operador é utilizado para acessar o valor armazenado no endereço apontado por p?",
+		"codigo": "int x = 25;\nint *p = &x;\nprintf(\"%d\", _____);",
+		"alternativas": [
+			"&p",
+			"p",
+			"*p",
+			"&x"
+		],
+		"correta": 2
+		}
 ]
 
 func camera_control():
 	camera_2d.zoom = Vector2(0.5,0.5)
 	var tween = create_tween()
-	tween.tween_property(camera_2d, "zoom", Vector2(0.9,0.9),5.0)
+	tween.tween_property(camera_2d, "zoom", Vector2(0.9,0.9),2.0)
 	await tween.finished
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	tween = create_tween()
-	tween.tween_property(camera_2d, "zoom", Vector2(3.8,3.8), 2.5)
+	tween.tween_property(camera_2d, "zoom", Vector2(3.8,3.8), 1.5)
 	await tween.finished
 	mesa_pc.visible = false
 	tela_cheia.visible = true
 	await get_tree().create_timer(0.5).timeout
 	tween = create_tween()
-	tween.tween_property(camera_2d, "zoom", Vector2(1,1), 3)
+	tween.tween_property(camera_2d, "zoom", Vector2(1,1), 1)
 	
 
 func mostrar_questao():
@@ -118,7 +436,7 @@ func _ready():
 	camera_control()
 	questoes.shuffle()
 	
-	await get_tree().create_timer(14).timeout
+	await get_tree().create_timer(8).timeout
 	mostrar_questao()
 	a.pressed.connect(func(): verificar_resposta(0))
 	b.pressed.connect(func(): verificar_resposta(1))

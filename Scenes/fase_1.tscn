@@ -139,10 +139,10 @@ text = "Error"
 
 [node name="Timertxt" type="Label" parent="QuizUI/QuestionPanel" unique_id=681253588]
 layout_mode = 0
-offset_left = 849.0
-offset_top = -28.0
-offset_right = 917.0
-offset_bottom = 55.0
+offset_left = 903.0
+offset_top = 265.0
+offset_right = 971.0
+offset_bottom = 348.0
 text = "ex"
 label_settings = SubResource("LabelSettings_efuq8")
 
