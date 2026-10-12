@@ -71,7 +71,6 @@ grow_vertical = 2
 position = Vector2(604, 262)
 scale = Vector2(13, 13)
 sprite_frames = SubResource("SpriteFrames_7fw7d")
-animation = &"OnMouse"
 
 [node name="Start" type="Button" parent="." unique_id=505519816]
 z_index = -1
@@ -87,7 +86,6 @@ script = ExtResource("1_sj23m")
 position = Vector2(605, 505)
 scale = Vector2(13, 13)
 sprite_frames = SubResource("SpriteFrames_4b3kd")
-animation = &"MouseOn"
 
 [node name="Quit" type="Button" parent="." unique_id=2088075113]
 z_index = -1

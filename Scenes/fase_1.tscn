@@ -220,3 +220,12 @@ position = Vector2(269, 522)
 scale = Vector2(0.6533333, 0.68666667)
 sprite_frames = SubResource("SpriteFrames_7fw7d")
 animation = &"Happy"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1161064633]
+z_index = 5
+layout_mode = 0
+offset_left = -88.0
+offset_top = 174.0
+offset_right = 1296.0
+offset_bottom = 981.0
+color = Color(1, 0, 0, 0)

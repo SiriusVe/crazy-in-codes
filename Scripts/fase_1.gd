@@ -19,6 +19,7 @@ extends Control
 
 @onready var player_face: AnimatedSprite2D = $QuizUI/PlayerFace
 
+@onready var color_rect: ColorRect = $ColorRect
 
 var mental = 100.00
 var questao_atual = 0
@@ -434,6 +435,10 @@ func proxima_questao():
 	mostrar_questao()
 	
 	print("Nova questão! Timer:", timeR)
+
+func tension():
+	color_rect.color.a = (100 - mental_bar.value)/200
+	
 	
 func _ready():
 	camera_control()
@@ -470,6 +475,7 @@ func _process(delta):
 		mental -= (mentalLoss / time) * delta
 		mental = max(mental, 0.0)
 		mental_bar.value = mental
+		tension()
 		
 		if timeR <= 0.0 and not fim_questao:
 			timeR = 0.0
