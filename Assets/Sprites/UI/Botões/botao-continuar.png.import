@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br1v0mg6axtkb"
-path="res://.godot/imported/botao-menu.png-8c813675a38269d822f4565b6635fb7c.ctex"
+uid="uid://bsii4e08y7u6i"
+path="res://.godot/imported/botao-continuar.png-4022c7548592ae314d87def91c007986.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Botões/botao-menu.png"
-dest_files=["res://.godot/imported/botao-menu.png-8c813675a38269d822f4565b6635fb7c.ctex"]
+source_file="res://Assets/Sprites/UI/Botões/botao-continuar.png"
+dest_files=["res://.godot/imported/botao-continuar.png-4022c7548592ae314d87def91c007986.ctex"]
 
 [params]
 

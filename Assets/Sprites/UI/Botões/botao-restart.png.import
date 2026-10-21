@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ucslsvgscvtq"
-path="res://.godot/imported/botao-restart.png-ab256b0791d1fa715c20683a6802ca41.ctex"
+path="res://.godot/imported/botao-restart.png-3848b6b995fa25ca4f15139ed61ff129.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Botões/botao-restart.png"
-dest_files=["res://.godot/imported/botao-restart.png-ab256b0791d1fa715c20683a6802ca41.ctex"]
+source_file="res://Assets/Sprites/UI/Botões/botao-restart.png"
+dest_files=["res://.godot/imported/botao-restart.png-3848b6b995fa25ca4f15139ed61ff129.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsii4e08y7u6i"
-path="res://.godot/imported/botao-continuar.png-49243814d1e217e1dae5ff389f4d1dbe.ctex"
+uid="uid://ddti74cdjh7iw"
+path="res://.godot/imported/Cenario.fase2.png-9bd9534656add8690b8447a3241e4139.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Botões/botao-continuar.png"
-dest_files=["res://.godot/imported/botao-continuar.png-49243814d1e217e1dae5ff389f4d1dbe.ctex"]
+source_file="res://Assets/Sprites/Cenários/Cenario.fase2.png"
+dest_files=["res://.godot/imported/Cenario.fase2.png-9bd9534656add8690b8447a3241e4139.ctex"]
 
 [params]
 
