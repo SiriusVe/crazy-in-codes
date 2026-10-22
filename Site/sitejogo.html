@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <style>
+        header div a{font-family: "Press Start 2P", monospace; color:#fff; text-decoration: none; font-size: 30px;} /* Nome do Jogo */
+        .contorno-crazy{display: inline-flex; flex-direction: row; letter-spacing: -15px; text-shadow: -2px 0 #fcfcfc, 2px 0 #fcfcfc,
+             0 -2px #fcfcfc, 0 2px #fcfcfc;} /* contorno do Crazy */
+        .contorno-codes{text-shadow: -2px 0 #fcfcfc, 2px 0 #fcfcfc, 0 -2px #fcfcfc, 0 2px #fcfcfc;}
+        nav a{text-decoration: none; color:#fff; font-family: "Press Start 2P", monospace; padding: 0.5rem 0.6rem; display: inline-block;} /* Opções do Menu */
+        .in{margin-left: 15px;}
+        *{box-sizing: border-box; margin:0px; padding: 0px;}
+        body{display:grid; grid-template-rows: auto 1fr auto; min-height: 100vh;}
+        .cabec{font-size:18px; background: #000000; color: #fff; padding: 1rem;
+            display: flex; justify-content: space-between; align-items: center; position: relative;}
+            .menu-toggle {display: none; background: none; border: none;
+                            color: white; font-size: 1.7rem; cursor: pointer; margin-left: auto;}
+            @media (max-width: 768px) {
+            .menu-toggle { display: block;}
+            .nav-menu { display: none;
+                        flex-direction: column;
+                        position: absolute;
+                        top: 100%; /* Posiciona exatamente abaixo do header */
+                        right: 1rem; /* Alinha na lateral direita, abaixo do botão hambúrguer */
+                        width: 200px; /* Largura fixa para virar um menu suspenso (dropdown) */
+                        background: #444; /* Cor levemente diferente para destacar o menu */
+                        padding: 0.5rem 0;
+                        text-align: center;
+                        color:#fff;
+                        text-decoration: none;
+                        z-index: 10;
+                        border-radius: 4px; /* Cantos arredondados para acabamento */
+                        box-shadow: 0px 4px 6px rgba(0,0,0,0.2); /* Sombra para dar profundidade */}
+                   
+            .nav-menu a {color:#fff;
+                        display: block;
+                        padding: 0.75rem 0;
+                        margin: 0;}
+            .nav-menu a:hover {background: #555; }
+            .nav-menu.active {display: flex; } 
+        }
+    </style>
+</head>
+<body>
+    <header class="cabec">
+        <div><a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+            <span class="contorno-crazy" style="color: rgb(0, 140, 255);">C</span>
+            <span class="contorno-crazy" style="color: rgb(251, 255, 0);">R</span>
+            <span class="contorno-crazy" style="color: rgb(255, 0, 0);">A</span>
+            <span class="contorno-crazy" style="color: rgb(0, 140, 255);">Z</span>
+            <span class="contorno-crazy" style="color: rgb(251, 255, 0);">Y</span> 
+            <span class="in">in</span>
+            <span class="contorno-codes" style="color: rgb(0, 0, 0);">CODES</span></a></div>
+            <button class="menu-toggle">&equiv;</button> 
+        <nav class="nav-menu">
+            <a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Início</a>
+            <a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Gameplay</a>
+            <a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Personagens</a>
+            <a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Cenários</a>
+            <a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Documento</a>
+            <a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Git Hub</a>
+        </nav>
+    </header>
+    <main>
+            <img src=Cenario.fase2.png alt="Cenário">
+            <img src="Logodojogo-semfundo.png" alt="Logo do Jogo">
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');});
+    </script>
+</body>
+</html>
