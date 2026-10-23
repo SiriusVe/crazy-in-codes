@@ -98,13 +98,14 @@
                     line-height: 1.8; text-align: right; margin: 0 90px;}
         .video{grid-area: video; align-self: center; justify-self: start; width: 70%; max-width: 600px; aspect-ratio: 16/9;
                border: 4px solid #fff; border-radius: 8px; overflow: hidden; background: #000; margin: 0 0 0 2rem;}
+               .video video, .video iframe{width: 100%; height: 100%; display:block}
         @media (max-width: 768px){
             .gameplay{min-height: auto; height: auto; padding: 3vw 2vw;}
             .gameplay h2{font-size: clamp(14px, 5vw, 60px); margin: 0; white-space: nowrap;}
             .logo{width: 25vw; max-width: 100%; margin: 0 }
             .gameplay p{ font-size: clamp(6px, 2.4vw, 14px); list-style: 1.4; margin: 0; padding: 0; width: 100%; max-width: 100%;}
             .video{ width: 70%; margin: 1.5rem 0;}
-            .video video, .video iframe{width: 100%; height: 100%; display:block; object-fit: cover;}
+            .video video, .video iframe{width: 100%; height: 100%; display:block}
         }
     </style>
 </head>
@@ -139,7 +140,7 @@
             <h2>Gameplay</h2>
             <div>
                 <div class="video">
-                    <video src="videoteste.mp4" controls poster="capa.png"></video>
+                    <video src="Gameplay/videoteste.mp4" controls poster="Gameplay/videoteste.mp4"></video>
                 </div>
                 <p href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">Vídeo de Jogabilidade com tutorial mostrando
                 detalhes sobre nosso jogo!!!</p>
