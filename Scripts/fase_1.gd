@@ -21,6 +21,9 @@ extends Control
 
 @onready var color_rect: ColorRect = $ColorRect
 
+@onready var barlayout: AnimatedSprite2D = $QuizUI/Barlayout
+
+
 var mental = 100.00
 var questao_atual = 0
 var time = 20.0
@@ -97,7 +100,7 @@ var questoes = [
 		"correta": 3
 		},
 		{
-		"pergunta": "Qual operador verifica se o resto da divisão de n por 2 é igual a zero?",
+		"pergunta": "Qual operador verifica se o resto da divisão \nde n por 2 é igual a zero?",
 		"codigo": "int n = 8;\nif (n % 2 _____ 0)\n    printf(\"Par\");",
 		"alternativas": [
 				">",
@@ -197,7 +200,7 @@ var questoes = [
 		"correta": 1
 		},
 		{
-		"pergunta": "Qual instrução permite contar de 1 até 5, avançando uma unidade por vez?",
+		"pergunta": "Qual instrução permite contar de 1 até 5,\n avançando uma unidade por vez?",
 		"codigo": "for (int i = 1; i <= 5; _____)\n    printf(\"%d \", i);",
 		"alternativas": [
 			"i--",
@@ -208,7 +211,7 @@ var questoes = [
 		"correta": 2
 		},
 		{
-		"pergunta": "Qual operador acumula os valores de i na variável soma?",
+		"pergunta": "Qual operador acumula os valores de i\n na variável soma?",
 		"codigo": "int soma = 0;\nfor (int i = 1; i <= 5; i++) soma _____ i;\nprintf(\"%d\", soma);",
 		"alternativas": [
 			"-=",
@@ -230,7 +233,7 @@ var questoes = [
 		"correta": 2
 		},
 		{
-		"pergunta": "Qual operador torna a condição verdadeira para uma idade de 20 anos?",
+		"pergunta": "Qual operador torna a condição verdadeira\n para uma idade de 20 anos?",
 		"codigo": "int idade = 20;\nif (idade _____ 18) printf(\"Maior\");\nelse printf(\"Menor\");",
 		"alternativas": [
 			"<",
@@ -241,7 +244,7 @@ var questoes = [
 		"correta": 2
 		},
 		{
-		"pergunta": "Qual operador permite que a variável menor receba o menor valor entre a e b?",
+		"pergunta": "Qual operador permite que a variável menor\n receba o menor valor entre a e b?",
 		"codigo": "int a = 15, b = 10;\nint menor = a _____ b ? a : b;\nprintf(\"%d\", menor);",
 		"alternativas": [
 			">",
@@ -264,7 +267,7 @@ var questoes = [
 		},
 #difíceis
 		  {
-		"pergunta": "Qual expressão acessa o valor armazenado na variável apontada por p?",
+		"pergunta": "Qual expressão acessa o valor armazenado\n na variável apontada por p?",
 		"codigo": "int x = 10, *p = &x;\nprintf(\"%d\", _____);",
 		"alternativas": [
 			"p",
@@ -286,7 +289,7 @@ var questoes = [
 		"correta": 0
 		},
 		{
-		"pergunta": "Qual expressão acessa o segundo elemento do vetor v usando aritmética de ponteiros?",
+		"pergunta": "Qual expressão acessa o segundo elemento \n do vetor v usando aritmética de ponteiros?",
 		"codigo": "int v[] = {10, 20, 30};\nprintf(\"%d\", _____);",
 		"alternativas": [
 			"*(v + 1)",
@@ -308,7 +311,7 @@ var questoes = [
 		"correta": 0
 		},
 		{
-		"pergunta": "Qual operador lógico exige que as duas condições sejam verdadeiras?",
+		"pergunta": "Qual operador lógico exige que\n as duas condições sejam verdadeiras?",
 		"codigo": "int x = 7;\nif (x > 5 _____ x < 10) printf(\"OK\");",
 		"alternativas": [
 			"||",
@@ -330,7 +333,7 @@ var questoes = [
 		"correta": 0
 		},
 		{
-		"pergunta": "Qual função retorna a quantidade de caracteres de uma string, sem contar o caractere nulo final?",
+		"pergunta": "Qual função retorna a quantidade de caracteres\n de uma string, sem contar o caractere nulo final?",
 		"codigo": "#include <string.h>\nchar texto[] = \"GODOT\";\nprintf(\"%zu\", _____);",
 		"alternativas": [
 			"sizeof(texto)",
@@ -339,7 +342,7 @@ var questoes = [
 			"sizeof(texto[0])"
 		],
 	"correta": 1
-},
+		},
 		{
 		"pergunta": "Qual expressão permite alterar para 20 o valor apontado por p?",
 		"codigo": "int x = 5, *p = &x;\n_____ = 20;\nprintf(\"%d\", x);",
@@ -363,7 +366,7 @@ var questoes = [
 		"correta": 1
 		},
 		{
-		"pergunta": "Qual operador é utilizado para acessar o valor armazenado no endereço apontado por p?",
+		"pergunta": "Qual operador é utilizado para acessar\n o valor armazenado no endereço apontado por p?",
 		"codigo": "int x = 25;\nint *p = &x;\nprintf(\"%d\", _____);",
 		"alternativas": [
 			"&p",
@@ -374,6 +377,16 @@ var questoes = [
 		"correta": 2
 		}
 ]
+
+func bar_anim_control():
+	if mental > 50 and mental <= 75:
+		barlayout.play("75")
+	elif mental > 25 and mental <= 50:
+		barlayout.play("50")
+	elif mental > 0 and mental <= 25:
+		barlayout.play("25")
+	elif mental == 0:
+		barlayout.play("zero")
 
 func camera_control():
 	camera_2d.zoom = Vector2(0.5,0.5)
@@ -437,7 +450,7 @@ func proxima_questao():
 	print("Nova questão! Timer:", timeR)
 
 func tension():
-	color_rect.color.a = (100 - mental_bar.value)/200
+	color_rect.color.a = (100 - mental_bar.value)/350
 	
 	
 func _ready():
@@ -476,6 +489,7 @@ func _process(delta):
 		mental = max(mental, 0.0)
 		mental_bar.value = mental
 		tension()
+		bar_anim_control()
 		
 		if timeR <= 0.0 and not fim_questao:
 			timeR = 0.0

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dq7is1cfvlgri" path="res://Assets/Sprites/Cenários/cenario.telagrande.png" id="3_cq7l2"]
 [ext_resource type="Texture2D" uid="uid://bcavo16a2ijwg" path="res://Assets/Sprites/Player/Sprites-PlayerS1.png" id="4_efuq8"]
 [ext_resource type="PackedScene" uid="uid://ds745cvbq5e0e" path="res://Scenes/PauseMenu.tscn" id="4_gw3gf"]
+[ext_resource type="Texture2D" uid="uid://b5wg8xfbfen5w" path="res://Assets/Sprites/UI/Bars/sanidade.png" id="5_hya8f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cq7l2"]
 font_size = 30
@@ -14,6 +15,69 @@ font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_efuq8"]
 font_size = 60
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl6av"]
+atlas = ExtResource("5_hya8f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p4kr"]
+atlas = ExtResource("5_hya8f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds3y1"]
+atlas = ExtResource("5_hya8f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q620"]
+atlas = ExtResource("5_hya8f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14sx1"]
+atlas = ExtResource("5_hya8f")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgu4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl6av")
+}],
+"loop": 1,
+"name": &"25",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p4kr")
+}],
+"loop": 1,
+"name": &"50",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds3y1")
+}],
+"loop": 1,
+"name": &"75",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q620")
+}],
+"loop": 1,
+"name": &"Full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14sx1")
+}],
+"loop": 1,
+"name": &"zero",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gw3gf"]
 atlas = ExtResource("4_efuq8")
@@ -135,8 +199,10 @@ offset_bottom = 614.0
 
 [node name="QuestionTxt" type="Label" parent="QuizUI/QuestionPanel" unique_id=1695085391]
 layout_mode = 0
-offset_right = 1042.0
-offset_bottom = 37.0
+offset_left = -4.0
+offset_top = -35.0
+offset_right = 909.0
+offset_bottom = 46.0
 text = "Qual a saída?"
 label_settings = SubResource("LabelSettings_cq7l2")
 
@@ -209,15 +275,21 @@ label_settings = SubResource("LabelSettings_efuq8")
 
 [node name="MentalBar" type="ProgressBar" parent="QuizUI" unique_id=2008913581]
 layout_mode = 0
-offset_left = 405.0
-offset_top = -59.0
-offset_right = 1374.0
-offset_bottom = -14.0
+offset_left = 737.0
+offset_top = -83.0
+offset_right = 959.0
+offset_bottom = -10.0
 value = 100.0
 
+[node name="Barlayout" type="AnimatedSprite2D" parent="QuizUI" unique_id=281820430]
+position = Vector2(808, -36)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_qgu4t")
+animation = &"Full"
+
 [node name="PlayerFace" type="AnimatedSprite2D" parent="QuizUI" unique_id=488415693]
-position = Vector2(269, 522)
-scale = Vector2(0.6533333, 0.68666667)
+position = Vector2(1316, -28)
+scale = Vector2(0.5, 0.526)
 sprite_frames = SubResource("SpriteFrames_7fw7d")
 animation = &"Happy"
 
