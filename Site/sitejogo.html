@@ -6,6 +6,10 @@
     <title>Jogo</title>
     <style>
         /* Cabeçalho */
+        header{position: sticky !important; /* O !important é necessário para sobrescrever o position flex da classe .cabec */
+                top: 0;
+                z-index: 1000;
+                left: 0; width: 100%;}
         header div a{font-family: "Press Start 2P", monospace;
             color:#fff;
             text-decoration: none;
@@ -100,12 +104,50 @@
                border: 4px solid #fff; border-radius: 8px; overflow: hidden; background: #000; margin: 0 0 0 2rem;}
                .video video, .video iframe{width: 100%; height: 100%; display:block}
         @media (max-width: 768px){
-            .gameplay{min-height: auto; height: auto; padding: 3vw 2vw;}
-            .gameplay h2{font-size: clamp(14px, 5vw, 60px); margin: 0; white-space: nowrap;}
-            .logo{width: 25vw; max-width: 100%; margin: 0 }
-            .gameplay p{ font-size: clamp(6px, 2.4vw, 14px); list-style: 1.4; margin: 0; padding: 0; width: 100%; max-width: 100%;}
-            .video{ width: 70%; margin: 1.5rem 0;}
+            .gameplay{min-height: 0; height: 40vw; padding: 0vw 1vw; align-items: start; align-content: start; grid-template-rows: auto;
+                      grid-auto-rows: auto; margin-bottom: 0;}
+            .gameplay h2{font-size: clamp(14px, 5vw, 60px); margin: 0; white-space: nowrap; align-self: start; margin-top: -4vw;}
+            .gameplay p{ font-size: clamp(5px, 2.4vw, 12px); list-style: 1.4; margin: 0; width: 100%; max-width: 30vw;
+                         align-self: start; margin-top: -4vw; line-height: 1.5; justify-self: end; text-align: right; padding-left: 2vw;}
+            .video{ width: 70%; margin: 1.5rem 0; margin-top: -2vw;}
             .video video, .video iframe{width: 100%; height: 100%; display:block}
+        }
+
+        /*personagens*/
+        .personagens{background: #000; color: #fff; font-family: "Press Start 2P", monospace;}
+        .personagenstitulo{font-size: 60px; display: flex; justify-content: space-between; width: 100%; padding: 0 2vw; margin: 0 45px;}
+        .spanh2{margin: 0 50px;}
+        .card{width: 15vw; min-width: 160px; height: auto; min-height: 420px; padding: 3px; border: 3px solid #fff; align-items: center;
+              border-radius: 8px; margin: 50px 0 0; text-align: center; margin-top: 50px; display: flex; flex-direction: column;}
+        .card p{margin-top: auto; font-size: 16px;}
+        .card h3{font-size: 25px;}
+        .sprite{--zoom: 3;      /* tamanho na tela */
+                --fw: 64;       /* largura de UM frame, em px da imagem */
+                --fh: 64;       /* altura de UM frame */
+                --frames: 4;    /* frames por linha */
+                --rows: 1;      /* nº de linhas da imagem */
+                --row: 0;       /* qual linha mostrar (0 = primeira) */
+                width: calc(var(--fw) * var(--zoom) * 1px); height: calc(var(--fh) * var(--zoom) * 1px); background-repeat: no-repeat;
+                background-size: calc(var(--fw) * var(--frames) * var(--zoom) * 1px)
+                   calc(var(--fh) * var(--rows) * var(--zoom) * 1px); background-position: 0 calc(var(--row) * var(--fh) * var(--zoom) * -1px);
+                image-rendering: pixelated; margin: 0 auto 12px;
+                animation: andar 0.8s steps(var(--frames)) infinite; /* Animação de andar */}
+        @keyframes andar{
+            to{background-position-x: calc(var(--fw) * var(--frames) * var(--zoom) * -1px);}
+            } /* animação de andar do personagem, com 4 sprites */
+        .lado{display: flex; gap: 1.5vw;}
+        #ladoEsq{grid-column: 1; justify-self: start;}
+        #ladoDir{grid-column: 3; justify-self: end;}
+        .seta{position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; color: #fff;
+              font-size: 40px; cursor: pointer;}
+        #esq{left: 1vw;}
+        #dir{right: 1vw;}
+        .seta:disabled{opacity: 0.2; cursor: default;}
+        .carrosel{position: relative; display: grid; align-items: start; grid-template-columns: 1fr minmax(260px, 26vw) 1fr; padding: 0 3vw;}
+
+        @media (max-width: 768px){
+            .personagenstitulo{font-size: clamp(14px, 5vw, 60px); margin: 0 10px; white-space: nowrap; align-self: start; margin-top: -4vw;}
+            .spanh2{margin: 0 10px; font-size: clamp(14px, 5vw, 60px);}
         }
     </style>
 </head>
@@ -113,10 +155,10 @@
     <header class="cabec">
         <div><a href="#https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
             <span class="contorno-crazy" style="color: rgb(0, 140, 255);">C</span>
-            <span class="contorno-crazy" style="color: rgb(251, 255, 0);">R</span>
+            <span class="contorno-crazy" style="color: rgb(213, 216, 9);">R</span>
             <span class="contorno-crazy" style="color: rgb(255, 0, 0);">A</span>
             <span class="contorno-crazy" style="color: rgb(0, 140, 255);">Z</span>
-            <span class="contorno-crazy" style="color: rgb(251, 255, 0);">Y</span> 
+            <span class="contorno-crazy" style="color: rgb(213, 216, 9);">Y</span> 
             <span class="in">in</span>
             <span class="contorno-codes" style="color: rgb(0, 0, 0);">CODES</span></a></div>
             <button class="menu-toggle">&equiv;</button> 
@@ -146,6 +188,55 @@
                 detalhes sobre nosso jogo!!!</p>
             </div>
         </section>
+        <section class="personagens">
+                <h2 class="personagenstitulo"><span>Nossos</span> <span class="spanh2">Personagens</span></h2>
+                <section class="carrosel">
+                    <button class="seta" id="esq">&#10094;</button>
+                    <div class="lado" id="ladoEsq"></div>
+                    <div class="lado" id="ladoDir"></div>
+                    <button class="seta" id="dir">&#10095;</button>
+                    <div>
+                        <div id="todos" hidden>
+                            <div class="card">
+                                <h3>Protagonista</h3>
+                                <div class="sprite" style="background-image: url();"></div>
+                                <p>Descrição do personagem principal do jogo.</p>
+                            </div>
+                            
+                            <div class="card">
+                                <h3>Carangueijo</h3>
+                                <div class="sprite" style="--frames: 4; --rows: 2; --row: 0; background-image: url(Imagens/caranguejo.andando.png);"></div>
+                                <p>Descrição do personagem principal do jogo.</p>
+                            </div>
+
+                            <div class="card">
+                                <h3>Rato</h3>
+                                <div class="sprite" style="--frames: 4; --rows: 2; --row: 0; background-image: url(Imagens/rato.andando.png);"></div>
+                                <p>Descrição do personagem principal do jogo.</p>
+                            </div>
+
+                            <div class="card">                                
+                                <h3>Morcego</h3>
+                                <div class="sprite" style="background-image: url(Imagens/morcego.voando.png);"></div>
+                                <p>Descrição do personagem principal do jogo.</p>
+                            </div>
+
+                            <div class="card">
+                                <h3>Glitch</h3>
+                                <div class="sprite" style="--fw: 400; --fh: 400; --frames: 3; --rows: 1; --row: 0; --zoom: 0.45;
+                                     background-image: url(Imagens/glitch.png);"></div>
+                                <p>Descrição do personagem principal do jogo.</p>
+                            </div>
+
+                            <div class="card">                               
+                                <h3>Boss</h3>
+                                <div class="sprite" style="background-image: url();"></div>
+                                <p>Descrição do Boss do jogo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
     </main>
     <footer>
 
@@ -156,7 +247,25 @@
         const navMenu = document.querySelector('.nav-menu');
         menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-});
+        });
+
+        /* Script para os cards da Sessão dos personagens */
+        const cards = [...document.querySelectorAll('#todos .card')];
+        const ladoEsq = document.getElementById('ladoEsq');
+        const ladoDir = document.getElementById('ladoDir');
+        const btnEsq = document.getElementById('esq');
+        const btnDir = document.getElementById('dir');
+        let inicio = 0; // 0 = cards 1-4 | 2 = cards 3-6
+        function mostrar() {
+            ladoEsq.replaceChildren(cards[inicio], cards[inicio + 1]);
+            ladoDir.replaceChildren(cards[inicio + 2], cards[inicio + 3]);
+            btnEsq.disabled = inicio === 0;
+            btnDir.disabled = inicio === 2;
+        }
+        btnDir.addEventListener('click', () => { inicio = 2; mostrar(); });
+        btnEsq.addEventListener('click', () => { inicio = 0; mostrar(); });
+        mostrar();
+        
     </script>
 </body>
 </html>
