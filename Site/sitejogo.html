@@ -27,7 +27,7 @@
         *{box-sizing: border-box;
             margin:0px;
             padding: 0px;}
-        body{display:grid; grid-template-rows: auto 1fr auto; min-height: 100vh;}
+        body{display:grid; grid-template-rows: auto 1fr auto; min-height: 100vh; overflow-x: hidden;}
         .cabec{font-size:18px; background: #000000; color: #fff; padding: 1rem;
             display: flex; justify-content: space-between; align-items: center; position: relative;}
             .menu-toggle {display: none; background: none; border: none;
@@ -144,11 +144,42 @@
         #dir{right: 1vw;}
         .seta:disabled{opacity: 0.2; cursor: default;}
         .carrosel{position: relative; display: grid; align-items: start; grid-template-columns: 1fr minmax(260px, 26vw) 1fr; padding: 0 3vw;}
-
         @media (max-width: 768px){
-            .personagenstitulo{font-size: clamp(14px, 5vw, 60px); margin: 0 10px; white-space: nowrap; align-self: start; margin-top: -4vw;}
-            .spanh2{margin: 0 10px; font-size: clamp(14px, 5vw, 60px);}
+            .personagenstitulo{font-size: clamp(14px, 5vw, 60px); margin: 0 37px; white-space: nowrap; align-self: start; margin-top: -4vw;}
+            .spanh2{margin: 0 38px; font-size: clamp(14px, 5vw, 60px);}
+            .carrosel{grid-template-columns: minmax(0, 1fr) minmax(0, 50%) minmax(0, 1fr); padding: 0 8%;}
+            .card{width: 100%; max-width: 20vw; min-height: 40vw; padding: 4px; min-width: 30px; margin-top: 2vw;}
+            .card h3{font-size: clamp(10px, 4px, 20px);}
+            .card p{font-size: clamp(7px, 2.5px, 14px); line-height: 1.5;}
+            .sprite{zoom: 0.5;}
+            #ladoEsq{justify-self: start;}
+            #ladoDir{justify-self: end;}
         }
+
+        /* Cenários */
+        .cenario{background: #000; color: #fff; font-family: "Press Start 2P", monospace;}
+        .cenariotitulo{font-size: 60px; display: flex; justify-content: space-between; width: 100%; padding: 0 2vw; margin: 0 45px; margin-top: 200px;}
+        .spanh2ce{margin: 0 60px;}
+        #cenEsq{grid-column: 1; justify-self: start;}
+        #cenDir{grid-column: 3; justify-self: end;}
+        #esqCen{left: 1vw;}
+        #dirCen{right: 1vw}
+        .card-cen{width: 100%; max-width: 26vw; padding: 12px; margin-top: 50px; border: 3px solid #fff;
+                  border-radius: 8px; text-align: center; overflow: hidden;}
+        .card-cen img{width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block;
+                      image-rendering: pixelated; margin-bottom: 10px;}
+        .card-cen h3{font-size: 18px; margin-bottom: 8px;}
+        .card-cen p{font-size: 11px; line-height: 1.6;}
+        @media (max-width: 768px){
+            .cenariotitulo{font-size: clamp(14px, 5vw, 60px); margin: 0 27px; white-space: nowrap; align-self: start; margin-top: 15vw;}
+            .spanh2ce{margin: 0 55px; font-size: clamp(14px, 5vw, 60px);}
+            .card-cen{max-width: 30vw; padding: 4px; border-width: 2px; margin-top: 20px;}
+            .card-cen h3{font-size: clamp(6px, 2.2vw, 12px); margin-bottom: 4px;}
+            .card-cen p{font-size: clamp(4px, 1.5vw, 8px); line-height: 1.4;}
+        }
+
+        /* Documento */
+
     </style>
 </head>
 <body>
@@ -237,6 +268,55 @@
                     </div>
                 </section>
             </section>
+        <section class="cenario">
+            <h2 class="cenariotitulo"><span>Cenários</span> <span class="spanh2ce">do Jogo</span></h2>
+            <section class="carrosel">
+                <button class="seta" id="esqCen">&#10094;</button>
+                <div class="lado" id="cenEsq"></div>
+                <div class="lado" id="cenDir"></div>
+                <button class="seta" id="dirCen">&#10095;</button>
+                <div id="todosCen" hidden>
+                    <div class="card-cen">
+                        <img src="Imagens/cenario.mesa.png" alt="Quarto">
+                        <h3>Quarto da Protagonista</h3>
+                        <p>Fase 1</p>
+                    </div>
+
+                    <div class="card-cen">
+                        <img src="Imagens/cenario.telagrande.png" alt="Computador">
+                        <h3>Computador da Protagonista</h3>
+                        <p>Fase 1</p>
+                    </div>
+
+                    <div class="card-cen">
+                        <img src="Imagens/cenario.monstro.png" alt="Monstro">
+                        <h3>Monstro na Janela</h3>
+                        <p>Fase 1</p>
+                    </div>
+
+                    <div class="card-cen">
+                        <img src="Imagens/Cenario.fase2.png" alt="Cidade">
+                        <h3>Cidade dentro do Jogo</h3>
+                        <p>Fase 2</p>
+                    </div>
+
+                    <div class="card-cen">
+                        <img src="Imagens/" alt="Pré Luta">
+                        <h3>Quarto da Protagonista</h3>
+                        <p>Fase 3</p>
+                    </div>
+
+                    <div class="card-cen">
+                        <img src="Imagens/" alt="Arena">
+                        <h3>Quarto da Protagonista</h3>
+                        <p>Fase 3</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            
+        </section>
     </main>
     <footer>
 
@@ -255,17 +335,42 @@
         const ladoDir = document.getElementById('ladoDir');
         const btnEsq = document.getElementById('esq');
         const btnDir = document.getElementById('dir');
+        const mq = window.matchMedia('(max-width: 768px)'); /* Para Celulares */
+        const maxInicio = () => mq.matches ? 4 : 2;
         let inicio = 0; // 0 = cards 1-4 | 2 = cards 3-6
         function mostrar() {
-            ladoEsq.replaceChildren(cards[inicio], cards[inicio + 1]);
-            ladoDir.replaceChildren(cards[inicio + 2], cards[inicio + 3]);
+            inicio = Math.min(inicio, maxInicio());
+            if (mq.matches) {
+                ladoEsq.replaceChildren(cards[inicio]);
+                ladoDir.replaceChildren(cards[inicio + 1]);
+            } else {
+                ladoEsq.replaceChildren(cards[inicio], cards[inicio + 1]);
+                ladoDir.replaceChildren(cards[inicio + 2], cards[inicio + 3]);
+            }
             btnEsq.disabled = inicio === 0;
-            btnDir.disabled = inicio === 2;
+            btnDir.disabled = inicio === maxInicio();
         }
-        btnDir.addEventListener('click', () => { inicio = 2; mostrar(); });
-        btnEsq.addEventListener('click', () => { inicio = 0; mostrar(); });
+        btnDir.addEventListener('click', () => { inicio = Math.min(inicio + 2, maxInicio()); mostrar(); });
+        btnEsq.addEventListener('click', () => { inicio = Math.max(inicio - 2, 0); mostrar(); });
+        mq.addEventListener('change', mostrar);
         mostrar();
         
+        /* Script para os cards da sessão de Cenarios */
+        const cenCards = [...document.querySelectorAll('#todosCen .card-cen')];
+        const cenEsq = document.getElementById('cenEsq');
+        const cenDir = document.getElementById('cenDir');
+        const btnCenEsq = document.getElementById('esqCen');
+        const btnCenDir = document.getElementById('dirCen');
+        let cenInicio = 0;
+        function mostrarCen() {
+            cenEsq.replaceChildren(...[cenCards[cenInicio]].filter(Boolean));
+            cenDir.replaceChildren(...[cenCards[cenInicio + 1]].filter(Boolean));
+            btnCenEsq.disabled = cenInicio === 0;
+            btnCenDir.disabled = cenInicio + 2 >= cenCards.length;
+        }
+        btnCenDir.addEventListener('click', () => { cenInicio += 2; mostrarCen(); });
+        btnCenEsq.addEventListener('click', () => { cenInicio -= 2; mostrarCen(); });
+        mostrarCen();
     </script>
 </body>
 </html>
