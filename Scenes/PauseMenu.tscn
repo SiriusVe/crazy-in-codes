@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ds745cvbq5e0e"]
 
 [ext_resource type="Script" uid="uid://bwqd32kotknkn" path="res://Scripts/pause_manager.gd" id="1_lj4oq"]
-[ext_resource type="Texture2D" uid="uid://bsii4e08y7u6i" path="res://Assets/Sprites/Botões/botao-continuar.png" id="2_ey1tb"]
-[ext_resource type="Texture2D" uid="uid://br1v0mg6axtkb" path="res://Assets/Sprites/Botões/botao-menu.png" id="3_siy43"]
-[ext_resource type="Texture2D" uid="uid://ucslsvgscvtq" path="res://Assets/Sprites/Botões/botao-restart.png" id="4_yxrls"]
+[ext_resource type="Texture2D" uid="uid://bsii4e08y7u6i" path="res://Assets/Sprites/UI/Botões/botao-continuar.png" id="2_ey1tb"]
+[ext_resource type="Texture2D" uid="uid://br1v0mg6axtkb" path="res://Assets/Sprites/UI/Botões/botao-menu.png" id="3_siy43"]
+[ext_resource type="Texture2D" uid="uid://ucslsvgscvtq" path="res://Assets/Sprites/UI/Botões/botao-restart.png" id="4_yxrls"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7fw7d"]
 font_size = 120

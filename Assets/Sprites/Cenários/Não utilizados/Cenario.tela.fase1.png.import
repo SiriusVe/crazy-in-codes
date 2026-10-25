@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7b43bekht72"
-path="res://.godot/imported/Cenario.fase1.png-2ce8228ac8cd5d545d31c144e0bb2626.ctex"
+uid="uid://c0b137lhsjyax"
+path="res://.godot/imported/Cenario.tela.fase1.png-6534bdcbcb2e2cab75013fe8313cf97b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cenários/Cenario.fase1.png"
-dest_files=["res://.godot/imported/Cenario.fase1.png-2ce8228ac8cd5d545d31c144e0bb2626.ctex"]
+source_file="res://Assets/Sprites/Cenários/Não utilizados/Cenario.tela.fase1.png"
+dest_files=["res://.godot/imported/Cenario.tela.fase1.png-6534bdcbcb2e2cab75013fe8313cf97b.ctex"]
 
 [params]
 
