@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://cm28868qsffi0"]
 
+[ext_resource type="Texture2D" uid="uid://wq0g1y5hjsfy" path="res://Assets/Sprites/UI/Botões/botao-start.png" id="1_26p5a"]
 [ext_resource type="Script" uid="uid://bxxwgqmu82m5r" path="res://Scripts/start_button.gd" id="1_sj23m"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Botões/botao-start.png" id="1_w5yvs"]
 [ext_resource type="Script" uid="uid://cakgfqgh4tpnb" path="res://Scripts/quitButton.gd" id="2_4uahm"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Botões/botao-sair.png" id="3_26p5a"]
+[ext_resource type="Texture2D" uid="uid://b402ht303k12h" path="res://Assets/Sprites/UI/Botões/botao-sair.png" id="3_206en"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_26p5a"]
-atlas = ExtResource("1_w5yvs")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_206en"]
-atlas = ExtResource("1_w5yvs")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq3d2"]
+atlas = ExtResource("1_26p5a")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4j2g"]
+atlas = ExtResource("1_26p5a")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7fw7d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_26p5a")
+"texture": SubResource("AtlasTexture_iq3d2")
 }],
 "loop": 1,
 "name": &"OnMouse",
@@ -25,26 +25,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_206en")
+"texture": SubResource("AtlasTexture_q4j2g")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iq3d2"]
-atlas = ExtResource("3_26p5a")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4j2g"]
-atlas = ExtResource("3_26p5a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_thy0e"]
+atlas = ExtResource("3_206en")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybthm"]
+atlas = ExtResource("3_206en")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4b3kd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iq3d2")
+"texture": SubResource("AtlasTexture_thy0e")
 }],
 "loop": 1,
 "name": &"MouseOn",
@@ -52,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q4j2g")
+"texture": SubResource("AtlasTexture_ybthm")
 }],
 "loop": 1,
 "name": &"default",
