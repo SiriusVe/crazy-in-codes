@@ -23,6 +23,7 @@
             color:#fff; font-family: "Press Start 2P", monospace;
             padding: 0.5rem 0.6rem;
             display: inline-block;} /* Opções do Menu */
+        .nav-menu a:hover{color: #555;}
         .in{margin-left: 15px;}
         *{box-sizing: border-box;
             margin:0px;
@@ -42,8 +43,7 @@
                         padding: 0.5rem 0; text-align: center; color:#fff;
                         text-decoration: none; z-index: 10;
                         border-radius: 4px; /* Cantos arredondados para acabamento */
-                        box-shadow: 0px 4px 6px rgba(0,0,0,0.2); /* Sombra para dar profundidade */}
-                   
+                        box-shadow: 0px 4px 6px rgba(0,0,0,0.2); /* Sombra para dar profundidade */}                  
             .nav-menu a {color:#fff;
                         display: block;
                         padding: 0.75rem 0;
@@ -70,6 +70,7 @@
                 width: 25%;
                 max-width: 300px; height: auto;
                 image-rendering: pixelated;}
+        .frente.parada{position: absolute; top: var(--topo-parada); left: var(--esq-parada); width: var(--larg-parada);}
                 /* sombra no fim da imagem */
         .inicio::after {content: ""; position: absolute;
                         left: 0; bottom: -1px;
@@ -107,7 +108,7 @@
             .gameplay{min-height: 0; height: 40vw; padding: 0vw 1vw; align-items: start; align-content: start; grid-template-rows: auto;
                       grid-auto-rows: auto; margin-bottom: 0;}
             .gameplay h2{font-size: clamp(14px, 5vw, 60px); margin: 0; white-space: nowrap; align-self: start; margin-top: -4vw;}
-            .gameplay p{ font-size: clamp(5px, 2.4vw, 12px); list-style: 1.4; margin: 0; width: 100%; max-width: 30vw;
+            .gameplay p{font-size: clamp(5px, 2.4vw, 12px); list-style: 1.4; margin: 0; width: 100%; max-width: 30vw;
                          align-self: start; margin-top: -4vw; line-height: 1.5; justify-self: end; text-align: right; padding-left: 2vw;}
             .video{ width: 70%; margin: 1.5rem 0; margin-top: -2vw;}
             .video video, .video iframe{width: 100%; height: 100%; display:block}
@@ -179,7 +180,43 @@
         }
 
         /* Documento */
+        .documento{background: #000; color: #fff; font-family: "Press Start 2P", monospace; display: grid; align-content: center; align-items: start;
+                   grid-template-columns: minmax(0,1fr) minmax(220px,26%) minmax(0,1fr); padding: 60px 0; margin-top: 210px;
+                   grid-template-areas: "pdf  .  titulo" "pdf  .  texto" "pdf  .  botao";}
+                  
+        .documentotitulo{grid-area: titulo; font-size: 60px; text-align: right; margin: 0 140px 1rem 0;}
+        .documento p{grid-area: texto; justify-self: end; max-width: 400px; font-size: 30px; line-height: 1.8; text-align: right;
+                     margin: 0 90px 0 0; margin-top: -50px;}
+        .documento a{grid-area: texto; justify-self: end; max-width: 400px; font-size: 25px; color: #fff; line-height: 1.8; text-align: right;
+                     margin: 0 90px 0 0; margin-top: 155px;}
+        .documento a:hover{color: #555;}
+        .documento iframe{grid-area: pdf; justify-self: start; width: 100%; height: 400px; border: 4px solid #fff; background:#fff; display: block;}
+        .documento button{grid-area: botao; justify-self: end; margin-top: 12px; font-family: "Press Start 2P", monospace; font-size: 12px;
+                          background: #000; color: #fff; border: 3px solid #fff; padding: 10px 14px; cursor: pointer; margin: 0 90px;}
+        .documento button:hover{background: #fff; color :#000;}
+         @media (max-width: 768px){
+            .documento{display: grid; grid-template-columns: minmax(0,1fr) minmax(0,26%) minmax(0,1fr); grid-template-rows:auto auto auto;
+                       grid-template-areas: "pdf  .  titulo" "pdf  .  texto"  "botao . ."; align-content: start; align-items: start;
+                       column-gap:0; row-gap:10px; padding:20px 3% 40px; margin-top: 110px;}
+            .documentotitulo{grid-area: titulo; margin: 0; font-size: clamp(14px, 5vw, 60px); text-align: right; align-self: end;}
+            .documento p{grid-area: texto;  margin: 0; max-width: 100%; justify-self: end; align-self: start; font-size: clamp(5px, 2.4vw, 12px);
+                         line-height: 1.6; text-align: right;}
+            .documento a{grid-area: texto;  margin: 0; max-width: 100%; justify-self: end; align-self: start; font-size: clamp(5px, 2.4vw, 12px);
+                         line-height: 1.6; text-align: right; margin-top: 60px;}
+            .documento iframe{grid-area: pdf; justify-self: start; align-self: start; width: 90%; height: 100px; margin: 0; border-width: 3px;}
+            .documento button{grid-area: botao; justify-self: start; margin: 0; font-size: clamp(6px, 2.2vw, 10px); padding: 6px 8px; border-width: 2px;}
+         }
 
+         /* Espaço Vazio entre Documento e Git Hub */
+         .aaa{background: #000; color: #000; margin-top: -20px;}
+
+         /* Git Hub */
+         .github{background: #000; color: #fff; font-family: "Press Start 2P", monospace; margin-top: 200px;}
+         .github-titulo{font-size: 60px; text-align: center;}
+         @media (max-width: 768px){
+            .github{min-height: 0; height: 40vw; padding: 0vw 1vw; align-items: center; grid-template-rows: auto;
+                      grid-auto-rows: auto; margin-bottom: 0;}
+         }
     </style>
 </head>
 <body>
@@ -207,7 +244,7 @@
                 <img class="frente" src="Imagens/Logodojogo-semfundo.png" alt="Logo do Jogo">
         </div>
         <section class="inicio">
-            <img class="atras" src="Imagens/Cenario.fase2.png" alt="Cenário">
+            <img class="atras" src="./Imagens/Cenario.fase2.png" alt="Cenário">
         </section>
         <section class="gameplay">
             <h2>Gameplay</h2>
@@ -314,8 +351,51 @@
                 </div>
             </section>
         </section>
-        <section>
-            
+        <section class="documento">
+            <h2 class="documentotitulo">Documento</h2>
+            <p>Documento ABNT referente a detalhes técnicos e da história de nosso jogo!!!</p>
+            <a href="Documento/Documento Teste.pdf">Baixar Documento</a>
+            <iframe id="pdf" src="Documento/Documento Teste.pdf" title="Documento do Projeto" allowfullscreen></iframe>
+            <button id="btnTela" type="button">Tela Cheia</button> 
+        </section>
+        <section class="aaa">
+            <h2>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h2>
+        </section>
+        <section class="github">
+            <h2 class="github-titulo">Git Hub</h2>
+            <div>
+                <h3>A</h3>
+            </div>
+
+            <div>
+                <h3>A</h3>
+            </div>
+
+            <div>
+                <h3>A</h3>
+            </div>
+
+            <div>
+                <h3>A</h3>
+            </div>
+
+            <div>
+                <h3>A</h3>
+            </div>
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3>
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
+            <h3>A</h3> 
         </section>
     </main>
     <footer>
@@ -371,6 +451,53 @@
         btnCenDir.addEventListener('click', () => { cenInicio += 2; mostrarCen(); });
         btnCenEsq.addEventListener('click', () => { cenInicio -= 2; mostrarCen(); });
         mostrarCen();
+
+        /* Script para documento em tela cheia */
+        const pdf = document.getElementById('pdf');
+        const btnTela = document.getElementById('btnTela');
+        btnTela.addEventListener('click', () => {
+            if (pdf.requestFullscreen) {
+                pdf.requestFullscreen();
+            } else if (pdf.webkitRequestFullscreen) {   // Safari
+                pdf.webkitRequestFullscreen();}
+        });
+
+        /* Script para a Logo para ao chegar no Git Hub */
+        const logo = document.querySelector('.frente');
+        const alvo = document.querySelector('.documento');
+        const trilho = logo.parentElement;
+        let topoSticky = 0;
+        if (getComputedStyle(trilho).position === 'static') {
+            trilho.style.position = 'relative';
+        }
+        function controlarLogo(){
+            const t = trilho.getBoundingClientRect();
+            const a = alvo.getBoundingClientRect();
+        // onde a logo deve parar: base dela alinhada com o fim do Documento
+        const paraEm = a.bottom - t.top - logo.offsetHeight - 280;
+        // onde o sticky colocaria a logo agora
+        const atual = -t.top + topoSticky;
+        if (atual >= paraEm){
+            if (!logo.classList.contains('parada')){
+            const l = logo.getBoundingClientRect();
+            logo.style.setProperty('--esq-parada', (l.left - t.left) + 'px');
+            logo.style.setProperty('--larg-parada', l.width + 'px');
+            }
+            logo.style.setProperty('--topo-parada', paraEm + 'px');
+            logo.classList.add('parada');
+        } else {
+            logo.classList.remove('parada');
+        }
+        }
+        function medir(){
+        logo.classList.remove('parada');
+        topoSticky = parseFloat(getComputedStyle(logo).top) || 0;
+        controlarLogo();
+        }
+        window.addEventListener('scroll', controlarLogo, {passive:true});
+        window.addEventListener('resize', medir);
+        window.addEventListener('load', medir);
+        medir();
     </script>
 </body>
 </html>
